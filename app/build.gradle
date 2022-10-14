@@ -1,9 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
+    id "org.jetbrains.kotlin.kapt"
 }
-apply plugin: 'kotlin-kapt'
+
 
 android {
     namespace 'com.example.pizzeriaapp'
@@ -47,6 +47,31 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation "androidx.fragment:fragment-ktx:1.5.3"
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // retrofit
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    //GSON
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    // room
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-paging:2.5.0-beta01"
+    // Koin Core features
+    def koin_version = "3.2.0"
+    implementation("io.insert-koin:koin-core:$koin_version")
+    // Koin main features for Android
+    implementation("io.insert-koin:koin-android:$koin_version")
+
+    // pagging
+    implementation("androidx.paging:paging-runtime:3.1.1")
 
 
 }
