@@ -3,16 +3,14 @@ package com.example.pizzeriaapp.presentation.viewmodels
 import androidx.lifecycle.ViewModel
 import com.example.pizzeriaapp.domain.models.Product
 import com.example.pizzeriaapp.domain.repositories.IPizzaRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.flowOn
+import org.koin.core.KoinApplication.Companion.init
 
 class MainViewModel(
     private val repository: IPizzaRepository
 ) : ViewModel() {
-    private val _products = MutableStateFlow<List<Product>>(emptyList())
-    val product get() = _products.asStateFlow()
-
-    init {
-
-    }
+    val product = repository.getPizzas().flowOn(Dispatchers.IO)
 }

@@ -1,5 +1,6 @@
 package com.example.pizzeriaapp.data.repositories
 
+import android.nfc.tech.MifareUltralight.PAGE_SIZE
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -15,17 +16,16 @@ class PizzaRepository(
     private val db: PizzasDatabase
 ) : IPizzaRepository {
     @OptIn(ExperimentalPagingApi::class)
-    override fun getPizzas() {
-        Pager(
-            PagingConfig(pageSize = PAGE_SIZE),
-            remoteMediator = mediator,
-            pagingSourceFactory = { db.getProductsDao().get() })
-            .flow.map {
-                it.map { productEntity ->
-                    productEntity.toProduct()
-                }
+    override fun getPizzas() = Pager(
+        PagingConfig(pageSize = PAGE_SIZE),
+        remoteMediator = mediator,
+        pagingSourceFactory = { db.getProductsDao().get() })
+        .flow.map {
+            it.map { productEntity ->
+                productEntity.toProduct()
             }
-    }
+        }
+
 
     companion object {
         private const val PAGE_SIZE = 10

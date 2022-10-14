@@ -9,7 +9,7 @@ data class ProductAllapala(
     @SerializedName("descripcion")
     val description: String,
     @SerializedName("linkImagen")
-    val imageUrl: String,
+    val imageUrl: String?,
     @SerializedName("precio")
-    val price: String
+    val price: String?
 )
