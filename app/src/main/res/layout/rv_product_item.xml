@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="16dp"
     android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:src="@drawable/pizza_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/nameView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView"
+        android:layout_marginStart="22dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_bold"
+        android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        tools:text="Ветчина и грибы" />
 
     <TextView
         android:id="@+id/descriptionView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/sf_ui_display_regular"
+        android:maxLines="4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/nameView"
+        app:layout_constraintTop_toBottomOf="@id/nameView"
+        tools:text="Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус орция моцареллы adfasdfa sdf asdf" />
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView" />
-</LinearLayout>
+        android:layout_marginTop="8dp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/descriptionView"
+        app:layout_constraintTop_toBottomOf="@id/descriptionView"
+        app:strokeColor="@color/pink_500"
+        tools:text="от 345р" />
+</androidx.constraintlayout.widget.ConstraintLayout>
