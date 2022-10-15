@@ -54,36 +54,42 @@
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                app:layout_collapseMode="pin"
-                />
+                app:layout_collapseMode="pin" />
 
-            <Button
-                android:id="@+id/cityView"
-                style="@style/Widget.Material3.Button.TextButton"
+            <FrameLayout
                 android:layout_width="91dp"
                 android:layout_height="24dp"
                 android:layout_gravity="top|start"
                 android:layout_margin="16dp"
-                android:drawableEnd="@drawable/mark"
-                android:fontFamily="@font/roboto_medium"
-                android:includeFontPadding="false"
                 android:padding="0dp"
-                android:text="Москва"
-                app:layout_collapseMode="pin"
-                android:textAlignment="textStart"
-                android:textAllCaps="false"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:tint="@color/gray_900" />
+                app:layout_collapseMode="pin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="Москва"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="#222831" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:backgroundTint="#323232"
+                    android:src="@drawable/mark" />
+            </FrameLayout>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end|top"
-                app:layout_collapseMode="pin"
                 android:layout_margin="16dp"
-                android:src="@drawable/qr_code" />
+                android:src="@drawable/qr_code"
+                app:layout_collapseMode="pin" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -94,7 +100,7 @@
 
                 <com.google.android.material.chip.ChipGroup
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="wrap_content"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="0dp"
                     app:singleLine="true">
@@ -102,27 +108,27 @@
                     <com.google.android.material.chip.Chip
                         style="@style/CategoryChipStyle"
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
-                        android:textColor="@color/chip_text_color"
+                        android:layout_height="36dp"
                         android:checked="true"
-                        android:text="Пицца" />
+                        android:text="Пицца"
+                        android:textColor="@color/chip_text_color" />
 
                     <com.google.android.material.chip.Chip
                         style="@style/CategoryChipStyle"
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="36dp"
                         android:text="Комбо" />
 
                     <com.google.android.material.chip.Chip
                         style="@style/CategoryChipStyle"
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="36dp"
                         android:text="Десерты" />
 
                     <com.google.android.material.chip.Chip
                         style="@style/CategoryChipStyle"
                         android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_height="36dp"
                         android:text="Напитки" />
 
                 </com.google.android.material.chip.ChipGroup>
