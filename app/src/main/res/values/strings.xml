@@ -3,4 +3,6 @@
     <string name="menu">Меню</string>
     <string name="profile">Профиль</string>
     <string name="basket">Корзина</string>
+    <string name="price">От %sр</string>
+    <string name="no_internet_connection">Нет подключения к интернету</string>
 </resources>

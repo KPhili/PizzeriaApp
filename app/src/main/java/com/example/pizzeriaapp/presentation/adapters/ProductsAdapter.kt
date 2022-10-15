@@ -5,10 +5,15 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.pizzeriaapp.R
 import com.example.pizzeriaapp.databinding.RvProductItemBinding
 import com.example.pizzeriaapp.domain.models.Product
+import com.example.pizzeriaapp.presentation.utils.IImageLoader
 
-class ProductsAdapter(productComparator: ProductComparator) :
+class ProductsAdapter(
+    productComparator: ProductComparator,
+    private val imageLoader: IImageLoader
+) :
     PagingDataAdapter<Product, ProductsAdapter.ProductViewHolder>(productComparator) {
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
@@ -23,11 +28,19 @@ class ProductsAdapter(productComparator: ProductComparator) :
         )
     )
 
-    class ProductViewHolder(private val binding: RvProductItemBinding) : ViewHolder(binding.root) {
+    inner class ProductViewHolder(private val binding: RvProductItemBinding) :
+        ViewHolder(binding.root) {
         fun bind(product: Product?) = with(binding) {
             product?.let {
                 nameView.text = product.name
                 descriptionView.text = product.description
+                product.price?.let {
+                    val priceText = root.context.getString(R.string.price, it)
+                    buyView.text = priceText
+                }
+                product.imageUrl?.let {
+                    imageLoader.loadRoundedImage(it, imageView)
+                }
             }
         }
     }
