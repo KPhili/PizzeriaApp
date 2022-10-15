@@ -1,19 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/productsView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="10"
-        tools:listitem="@layout/rv_product_item" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginTop="24dp"
+        android:background="#FBFBFB">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/white"
+            app:expandedTitleGravity="top"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="112dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/banner_1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="8dp"
+                        android:padding="0dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/banner_2" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_collapseMode="pin"
+                />
+
+            <Button
+                android:id="@+id/cityView"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="91dp"
+                android:layout_height="24dp"
+                android:layout_gravity="top|start"
+                android:layout_margin="16dp"
+                android:drawableEnd="@drawable/mark"
+                android:fontFamily="@font/roboto_medium"
+                android:includeFontPadding="false"
+                android:padding="0dp"
+                android:text="Москва"
+                app:layout_collapseMode="pin"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:tint="@color/gray_900" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|top"
+                app:layout_collapseMode="pin"
+                android:layout_margin="16dp"
+                android:src="@drawable/qr_code" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="16dp"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="0dp"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CategoryChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:textColor="@color/chip_text_color"
+                        android:checked="true"
+                        android:text="Пицца" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CategoryChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="Комбо" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CategoryChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="Десерты" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CategoryChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="Напитки" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productsView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/rv_product_item" />
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

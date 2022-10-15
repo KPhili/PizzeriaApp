@@ -14,5 +14,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_main" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomAppBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:backgroundTint="@color/gray_300"
+        app:itemTextAppearanceActive="@style/TextAppearanceBottomNavigationViewActive"
+        app:itemTextColor="@color/bottom_navigation_item_color"
+        app:itemIconTint="@color/bottom_navigation_item_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_appbar_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
