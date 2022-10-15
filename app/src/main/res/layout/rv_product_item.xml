@@ -24,12 +24,12 @@
         android:ellipsize="end"
         android:fontFamily="@font/roboto_bold"
         android:maxLines="1"
+        android:text="Ветчина и грибы"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView"
-        app:layout_constraintTop_toTopOf="@id/imageView"
-        tools:text="Ветчина и грибы" />
+        app:layout_constraintTop_toTopOf="@id/imageView" />
 
     <TextView
         android:id="@+id/descriptionView"
@@ -39,21 +39,22 @@
         android:ellipsize="end"
         android:fontFamily="@font/sf_ui_display_regular"
         android:maxLines="4"
+        android:text="Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус орция моцареллы adfasdfa sdf asdf"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/nameView"
-        app:layout_constraintTop_toBottomOf="@id/nameView"
-        tools:text="Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус орция моцареллы adfasdfa sdf asdf" />
+        app:layout_constraintTop_toBottomOf="@id/nameView" />
 
     <Button
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:text="от 345р"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/descriptionView"
         app:layout_constraintTop_toBottomOf="@id/descriptionView"
-        app:strokeColor="@color/pink_500"
-        tools:text="от 345р" />
+        app:layout_constraintVertical_bias="1"
+        app:strokeColor="@color/pink_500" />
 </androidx.constraintlayout.widget.ConstraintLayout>
