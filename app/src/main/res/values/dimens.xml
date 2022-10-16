@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="productItem_margin">16dp</dimen>
+    <dimen name="productItem_imageView_width">135dp</dimen>
+    <dimen name="productItem_imageView_height">135dp</dimen>
+    <dimen name="productItem_nameView_marginStart">22dp</dimen>
+    <dimen name="productItem_nameView_textSize">16sp</dimen>
+    <dimen name="productItem_descriptionView_marginTop">8dp</dimen>
+    <dimen name="productItem_buyView_marginTop">8dp</dimen>
+    <dimen name="bottomNavigation_height">56dp</dimen>
+    <dimen name="appbar_expanded_height">240dp</dimen>
+    <dimen name="appbar_marginTop">24dp</dimen>
+    <dimen name="collapsingToolbar_expandedTitleMarginEnd">64dp</dimen>
+    <dimen name="collapsingToolbar_expandedTitleMarginStart">48dp</dimen>
+    <dimen name="banners_height">112dp</dimen>
+    <dimen name="banners_paddingHorizontal">8dp</dimen>
+    <dimen name="banner_marginHorizontal">8dp</dimen>
+    <dimen name="collapsedToolbar_height">120dp</dimen>
+    <dimen name="cityView_width">91dp</dimen>
+    <dimen name="cityView_height">24dp</dimen>
+    <dimen name="cityView_margin">16dp</dimen>
+    <dimen name="cityView_textSize">16sp</dimen>
+    <dimen name="cityViewMark_width">12dp</dimen>
+    <dimen name="cityViewMark_height">8dp</dimen>
+    <dimen name="qrCode_width">24dp</dimen>
+    <dimen name="qrCode_height">24dp</dimen>
+    <dimen name="qrCode_margin">16dp</dimen>
+    <dimen name="categories_bottomMargin">16dp</dimen>
+    <dimen name="categories_paddingHorizontal">12dp</dimen>
+    <dimen name="categoryChip_height">36dp</dimen>
+    <dimen name="productItem_descriptionView_textSize">14sp</dimen>
+</resources>

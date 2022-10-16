@@ -21,7 +21,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomAppBar"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/bottomNavigation_height"
         app:backgroundTint="@color/gray_300"
         app:itemTextAppearanceActive="@style/TextAppearanceBottomNavigationViewActive"
         app:itemTextColor="@color/bottom_navigation_item_color"

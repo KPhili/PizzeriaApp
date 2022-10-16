@@ -77,7 +77,7 @@ class MainFragment : Fragment() {
         }
     }
 
-    fun isNetworkConnected(): Boolean {
+    private fun isNetworkConnected(): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val activeNetwork =
                 connectivityManager.activeNetwork ?: return false

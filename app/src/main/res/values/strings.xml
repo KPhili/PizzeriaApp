@@ -5,4 +5,7 @@
     <string name="basket">Корзина</string>
     <string name="price">От %sр</string>
     <string name="no_internet_connection">Нет подключения к интернету</string>
+    <string name="name_example">Ветчина и грибы</string>
+    <string name="description_example">Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус орция моцареллы</string>
+    <string name="buy_example">от 345р</string>
 </resources>
