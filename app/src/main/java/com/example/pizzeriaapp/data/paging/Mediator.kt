@@ -23,6 +23,7 @@ class Mediator(
         state: PagingState<Int, ProductEntity>
     ): MediatorResult {
         return try {
+            // Текущая тестовая API не поддерживает постраничный вывод
             when (loadType) {
                 LoadType.REFRESH -> null
                 LoadType.PREPEND, LoadType.APPEND -> return MediatorResult.Success(

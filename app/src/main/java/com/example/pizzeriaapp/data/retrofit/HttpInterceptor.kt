@@ -1,5 +1,6 @@
 package com.example.pizzeriaapp.data.retrofit
 
+import com.example.pizzeriaapp.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -10,7 +11,7 @@ class HttpInterceptor : Interceptor {
             .newBuilder()
             .addHeader(
                 "X-RapidAPI-Key",
-                "69ad8c310dmsh96651eb4e31f1c4p187bc3jsn6f6db4b19ffa"
+                BuildConfig.API_KEY
             )
             .addHeader("X-RapidAPI-Host", "pizzaallapala.p.rapidapi.com")
             .build()

@@ -1,12 +1,9 @@
 package com.example.pizzeriaapp.presentation.views
 
-import android.app.ProgressDialog.show
 import android.content.Context
 import android.net.*
-import android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +19,6 @@ import com.example.pizzeriaapp.R
 import com.example.pizzeriaapp.databinding.FragmentMainBinding
 import com.example.pizzeriaapp.presentation.adapters.ProductsAdapter
 import com.example.pizzeriaapp.presentation.viewmodels.MainViewModel
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
